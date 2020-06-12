@@ -1,3 +1,3 @@
 @echo off
-echo "Hello World CLF ${Name}"
+echo "Hello World CLF" %1
 pause
