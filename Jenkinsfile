@@ -11,20 +11,20 @@ pipeline {
       parallel {
         stage('TestFireFox') {
           steps {
-            echo \'Testing FireFox\'
+            echo 'testing FireFox'
           }
         }
 
         stage('Test Chrome') {
           steps {
             echo 'test'
-            echo \'Testing Chrome\'
+            echo 'Testing Chrome'
           }
         }
 
         stage('Test edge') {
           steps {
-            echo \'testing edge\'
+            echo 'testing edge'
           }
         }
 
