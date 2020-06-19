@@ -1,8 +1,7 @@
 pipeline {
   agent any
   stages {
-    script try {
-        stage('Deploy to QA') {
+         stage('Deploy to QA') {
           steps {
             echo 'Part1'
             powershell ( 'Write-Output "Hello, World!"')
@@ -19,7 +18,7 @@ pipeline {
             echo 'Deploying'
           }
          }
-    } except { echo 'dont deply' } }
+    
     
   }
 }
