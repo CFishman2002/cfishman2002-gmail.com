@@ -6,19 +6,20 @@ pipeline {
             echo 'Part1'
             powershell ( 'Write-Output "Hello, World!"')
                 }
-             }
+          }
          stage('Test on QA') {
             steps {
                 echo 'testing onQA'
                 script {
-                  try{ 
+                    try { 
                        echo 'Running Tests'
                        powershell ( '.\\get_args.ps1') 
-                  }
-                  catch (exc) {
+                     }
+                    catch (exc) {
                        echo 'testing failed'
+                    }
                   }
-              }
+               }
             }
          stage('Deploy to Dev') {
           steps {
