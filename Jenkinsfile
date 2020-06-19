@@ -13,7 +13,9 @@ pipeline {
         stage('TestFireFox') {
           steps {
             echo 'testing FireFox'
-            powershell ( '.\\get_args.ps1')
+            /* comment */
+            /** def status = powershell(returnStatus: true, script: '.\\get_args.ps1')  **/
+            /* powershell ( '.\\get_args.ps1') */
           }
         }
 
