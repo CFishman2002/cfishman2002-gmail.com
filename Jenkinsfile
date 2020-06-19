@@ -13,6 +13,7 @@ pipeline {
         stage('TestFireFox') {
           steps {
             echo 'testing FireFox'
+            powershell ( '.\ get_args.ps1')
           }
         }
 
