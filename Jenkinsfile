@@ -4,7 +4,7 @@ pipeline {
     stage('Build') {
       steps {
         echo 'Building'
-        node {
+        node ('My Build Powershell Script') {
          powershell 'Write-Output "Hello, World!"'
               }
          }
