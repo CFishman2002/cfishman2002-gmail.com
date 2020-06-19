@@ -7,37 +7,17 @@ pipeline {
         powershell ( 'Write-Output "Hello, World!"')
             }
          }
-
-    stage('TestFireFox') {
-      parallel {
-        stage('TestFireFox') {
-          steps {
-            echo 'testing FireFox'
+     stage('Test on QA') {
+        steps {
+            echo 'testing onQA'
             powershell ( '.\\get_args.ps1') 
           }
         }
-
-        stage('Test Chrome') {
-          steps {
-            echo 'test'
-            echo 'Testing Chrome'
-          }
-        }
-
-        stage('Test edge') {
-          steps {
-            echo 'testing edge'
-          }
-        }
-
-      }
-    }
-
-    stage('Deploy') {
+     stage('Deploy to Dev') {
       steps {
         echo 'Deploying'
       }
-    }
+     }
 
   }
 }
