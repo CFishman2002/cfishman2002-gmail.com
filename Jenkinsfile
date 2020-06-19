@@ -5,13 +5,10 @@ pipeline {
       steps {
         echo 'Building'
         node {
-           def status = powershell(returnStatus: true, script: 'ipconfig')
-          if (status == 0) {
-          echo 'Success!'
-    }
-}
+         powershell 'Write-Output "Hello, World!"'
+              }
+         }
       }
-    }
 
     stage('TestFireFox') {
       parallel {
