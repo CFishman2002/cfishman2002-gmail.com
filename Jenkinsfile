@@ -4,6 +4,12 @@ pipeline {
     stage('Build') {
       steps {
         echo 'Building'
+        node {
+           def status = powershell(returnStatus: true, script: 'ipconfig')
+          if (status == 0) {
+          echo 'Success!'
+    }
+}
       }
     }
 
