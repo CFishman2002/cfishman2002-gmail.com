@@ -1,9 +1,9 @@
 pipeline {
   agent any
   stages {
-    stage('Build') {
+    stage('Deploy to QA') {
       steps {
-        echo 'Building'
+        echo 'Part1'
         powershell ( 'Write-Output "Hello, World!"')
             }
          }
