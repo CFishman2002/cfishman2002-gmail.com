@@ -17,6 +17,8 @@ pipeline {
                      }
                     catch (exc) {
                        echo 'testing failed'
+                      currentBuild.result = 'FAILURE'
+                      return
                     }
                   }
                }
