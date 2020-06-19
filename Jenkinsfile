@@ -1,23 +1,25 @@
 pipeline {
   agent any
   stages {
-    stage('Deploy to QA') {
-      steps {
-        echo 'Part1'
-        powershell ( 'Write-Output "Hello, World!"')
+    script try {
+        stage('Deploy to QA') {
+          steps {
+            echo 'Part1'
+            powershell ( 'Write-Output "Hello, World!"')
+                }
+             }
+         stage('Test on QA') {
+            steps {
+                echo 'testing onQA'
+                powershell ( '.\\get_args.ps1') 
+              }
             }
-         }
-     stage('Test on QA') {
-        steps {
-            echo 'testing onQA'
-            powershell ( '.\\get_args.ps1') 
+         stage('Deploy to Dev') {
+          steps {
+            echo 'Deploying'
           }
-        }
-     stage('Deploy to Dev') {
-      steps {
-        echo 'Deploying'
-      }
-     }
-
+         }
+    } except { echo 'dont deply' } }
+    
   }
 }
