@@ -10,7 +10,14 @@ pipeline {
          stage('Test on QA') {
             steps {
                 echo 'testing onQA'
-                powershell ( '.\\get_args.ps1') 
+                script {
+                  try{ 
+                       echo 'Running Tests'
+                       powershell ( '.\\get_args.ps1') 
+                  }
+                  catch (exc) {
+                       echo 'testing failed'
+                  }
               }
             }
          stage('Deploy to Dev') {
