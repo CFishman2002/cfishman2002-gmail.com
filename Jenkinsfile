@@ -14,7 +14,10 @@ pipeline {
           steps {
             echo 'testing FireFox'
             /* comment */
-            /** def status = powershell(returnStatus: true, script: '.\\get_args.ps1')  **/
+            def status = powershell(returnStatus: true, script: '.\\get_args.ps1') 
+             if (status == 0) {
+                echo 'Success!'
+              }
             /* powershell ( '.\\get_args.ps1') */
           }
         }
