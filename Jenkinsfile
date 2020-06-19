@@ -15,6 +15,7 @@ pipeline {
                        echo 'Running Tests'
                        powershell ( '.\\get_args.ps1') 
                       currentBuild.result = 'FAILURE'
+                      exit 0
                       return
                      }
                     catch (exc) {
