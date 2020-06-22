@@ -5,6 +5,7 @@ pipeline {
           steps {
             echo 'Part1'
             powershell ( 'Write-Output "Hello, World!"')
+            build job: 'hello_clf', propagate: true, wait: true
                 }
           }
          stage('Test on QA') {
